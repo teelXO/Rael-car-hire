@@ -1,0 +1,46 @@
+/* GLOBAL STYLES */
+body {
+    background-color: grey; /* Sets the required grey background */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* WHITEBOARD REQUIREMENT 1: H1 Underline & Color A */
+h1 {
+    text-decoration: underline;
+    color: #1a365d; /* Color A: Deep Navy Blue */
+}
+
+/* WHITEBOARD REQUIREMENT 2: H2 Color B */
+h2 {
+    color: #800000; /* Color B: Dark Red */
+}
+
+/* WHITEBOARD REQUIREMENT 3: H3 Color C */
+h3 {
+    color: #006400; /* Color C: Dark Green */
+}
+
+/* WHITEBOARD REQUIREMENT 5: Paragraph with Bold & Color D */
+.bold-color-d {
+    font-weight: bold;
+    color: #ffff00; /* Color D: Bright Yellow */
+}
+
+/* FORM STYLING FOR CAR HIRE UI */
+form {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: 280px;
+    color: #000000;
+}
+
+button {
+    background-color: #800000;
+    color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
