@@ -1,0 +1,52 @@
+/* Sets background to grey and establishes body typography */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    color: #333333;
+}
+
+/* Whiteboard Rule 1: H1 with Underline and Color A */
+h1 {
+    color: #1a365d; /* Color A: Deep Navy */
+    text-decoration: underline;
+}
+
+/* Whiteboard Rule 2: H2 with Color B */
+h2 {
+    color: #2b6cb0; /* Color B: Slate Blue */
+}
+
+/* Whiteboard Rule 3: H3 with Color C */
+h3 {
+    color: #2c7a7b; /* Color C: Teal */
+}
+
+/* Whiteboard Rule 5: Paragraph with Bold and Color D */
+.highlight-text {
+    font-weight: bold;
+    color: #c53030; /* Color D: Crimson Red */
+}
+
+/* Styling for interactive form and interactive element */
+form {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin-top: 15px;
+}
+
+button {
+    background-color: #2b6cb0;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #1a365d;
+}
