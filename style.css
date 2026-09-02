@@ -54,4 +54,52 @@
     <script src="script.js"></script>
 </body>
 </html>
+/* Grey Background for the whole page */
+body {
+    background-color: #808080; /* Standard Grey */
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    color: #ffffff;
+}
+
+/* H1: Underline & Color A (Navy Blue) */
+h1 {
+    text-decoration: underline;
+    color: #000080; 
+}
+
+/* H2: Color B (Dark Red / Maroon) */
+h2 {
+    color: #800000; 
+}
+
+/* H3: Color C (Dark Green) */
+h3 {
+    color: #006400; 
+}
+
+/* Paragraph 2: Bold & Color D (Bright Yellow) */
+.bold-color-d {
+    font-weight: bold;
+    color: #ffff00; 
+}
+
+/* Basic styling for form and button */
+form {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px;
+    border-radius: 8px;
+    width: 280px;
+}
+
+button {
+    background-color: #800000;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
 
