@@ -4,36 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Hire Service</title>
-    <!-- Linking External CSS -->
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* 1. FORCE LIGHT MODE (Prevents Mobile Dark Mode from breaking colors) */
+        :root {
+            color-scheme: light !important;
+        }
+
+        /* 2. GREY BACKGROUND */
+        body {
+            background-color: #808080 !important; /* Force Grey Background */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #ffffff !important;
+        }
+
+        /* WHITEBOARD RULE 1: H1 Underline & Color A (Navy) */
+        h1 {
+            text-decoration: underline !important;
+            color: #1a365d !important;
+        }
+
+        /* WHITEBOARD RULE 2: H2 Color B (Maroon) */
+        h2 {
+            color: #800000 !important;
+        }
+
+        /* WHITEBOARD RULE 3: H3 Color C (Dark Green) */
+        h3 {
+            color: #006400 !important;
+        }
+
+        /* WHITEBOARD RULE 5: Paragraph with Bold & Color D (Yellow) */
+        .bold-color-d {
+            font-weight: bold !important;
+            color: #ffff00 !important;
+        }
+
+        /* CAR HIRE FORM & UI STYLING */
+        form {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            padding: 15px;
+            border-radius: 8px;
+            width: 280px;
+        }
+
+        form label {
+            color: #000000 !important;
+        }
+
+        button {
+            background-color: #800000 !important;
+            color: #ffffff !important;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Whiteboard Requirements: Headings -->
+    <!-- HEADINGS FROM WHITEBOARD -->
     <h1>Premium Car Hire Solutions</h1>
     <h2>Explore Our Fleet & Flexible Rental Options</h2>
     <h3>Reliable Vehicles for Every Journey</h3>
 
-    <!-- Requirement: First P in Italics (3 sentences) -->
+    <!-- PARAGRAPH 1: Italics (3 sentences) -->
     <p>
         <i>Welcome to our leading car hire platform designed for comfort and convenience. We provide a broad range of well-maintained vehicles suitable for both business and leisure travel. Booking with us ensures high reliability, transparent rates, and seamless support throughout your trip.</i>
     </p>
 
-    <!-- Requirement: Second P in Bold + Color D -->
+    <!-- PARAGRAPH 2: Bold & Color D -->
     <p class="bold-color-d">
         Special Offer: Book today and get 15% off on all long-distance rentals!
     </p>
 
-    <!-- Requirement: Third P with mark, del, sup, sub -->
+    <!-- PARAGRAPH 3: mark, del, sup, sub -->
     <p>
         Check our <mark>discounted rates</mark> starting at <del>$80</del> $65/day<sup>*</sup> for selected models<sub>(terms apply)</sub>.
     </p>
 
     <hr>
 
-    <!-- Interactive Form -->
+    <!-- INTERACTIVE FORM -->
     <h2>Quick Rental Reservation</h2>
-    <form id="rentalForm">
+    <form>
         <label for="carModel">Select Car Model:</label><br>
         <select id="carModel">
             <option value="">-- Choose a Car --</option>
@@ -45,11 +102,28 @@
         <label for="days">Number of Days:</label><br>
         <input type="number" id="days" placeholder="e.g. 3"><br><br>
 
-        <button type="button" id="calcBtn">Calculate Total</button>
+        <button type="button" onclick="calculateTotal()">Calculate Total</button>
     </form>
 
     <p id="bookingResult" class="bold-color-d"></p>
 
-    <!-- Linking External JS -->
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script>
+        function calculateTotal() {
+            const carModel = document.getElementById("carModel").value;
+            const days = parseInt(document.getElementById("days").value);
+            const resultElement = document.getElementById("bookingResult");
 
+            if (!carModel || isNaN(days) || days <= 0) {
+                resultElement.innerText = "Please select a car and enter a valid number of days.";
+                return;
+            }
+
+            const dailyRate = 65;
+            const total = days * dailyRate;
+
+            resultElement.innerText = `Booking Summary: ${carModel} for ${days} day(s). Total: $${total}`;
+        }
+    </script>
+</body>
+</html>
