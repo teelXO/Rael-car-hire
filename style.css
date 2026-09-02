@@ -1,46 +1,58 @@
-/* GLOBAL STYLES */
+
+/* Force light mode color scheme to prevent Dark Mode overriding */
+:root {
+    color-scheme: light;
+}
+
+/* Base page setup */
 body {
-    background-color: grey; /* Sets the required grey background */
+    background-color: #808080 !important; /* Force Grey Background */
     font-family: Arial, sans-serif;
     margin: 20px;
+    color: #ffffff;
 }
 
-/* WHITEBOARD REQUIREMENT 1: H1 Underline & Color A */
+/* H1: Underline & Color A (Deep Navy) */
 h1 {
-    text-decoration: underline;
-    color: #1a365d; /* Color A: Deep Navy Blue */
+    text-decoration: underline !important;
+    color: #1a365d !important;
 }
 
-/* WHITEBOARD REQUIREMENT 2: H2 Color B */
+/* H2: Color B (Maroon) */
 h2 {
-    color: #800000; /* Color B: Dark Red */
+    color: #800000 !important;
 }
 
-/* WHITEBOARD REQUIREMENT 3: H3 Color C */
+/* H3: Color C (Dark Green) */
 h3 {
-    color: #006400; /* Color C: Dark Green */
+    color: #006400 !important;
 }
 
-/* WHITEBOARD REQUIREMENT 5: Paragraph with Bold & Color D */
+/* Paragraph 2: Bold & Color D (Bright Yellow) */
 .bold-color-d {
     font-weight: bold;
-    color: #ffff00; /* Color D: Bright Yellow */
+    color: #ffff00 !important;
 }
 
-/* FORM STYLING FOR CAR HIRE UI */
+/* Form styling */
 form {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
+    color: #000000 !important;
     padding: 15px;
     border-radius: 8px;
     width: 280px;
-    color: #000000;
+}
+
+/* Form text fix */
+form label {
+    color: #000000 !important;
 }
 
 button {
-    background-color: #800000;
-    color: #ffffff;
+    background-color: #800000 !important;
+    color: #ffffff !important;
     padding: 8px 12px;
     border: none;
     cursor: pointer;
     border-radius: 4px;
-  }
+}
