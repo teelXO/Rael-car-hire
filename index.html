@@ -169,6 +169,561 @@
   referrerpolicy="strict-origin-when-cross-origin" 
   allowfullscreen>
 </iframe>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rachael Kemboi | Brand Ambassador & Marketing Specialist</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #0f172a;
+            color: #fff;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.2rem;
+        }
+
+        nav a {
+            color: #f8fafc;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4.5rem 1.5rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 0.8rem 1.8rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        section {
+            max-width: 1100px;
+            margin: 2.5rem auto;
+            padding: 2.5rem 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: #0f172a;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #38bdf8;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+        }
+
+        /* Profile & Overview */
+        .profile-card {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-left: 4px solid #38bdf8;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+
+        /* Skills badges */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .skill-badge {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .skill-badge:hover {
+            background: #38bdf8;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Lists & Cards */
+        .experience-item, .campaign-card {
+            border: 1px solid #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            background: #fafafa;
+        }
+
+        .experience-item h3, .campaign-card h3 {
+            color: #0f172a;
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-item .role {
+            color: #0284c7;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .gallery-img-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #475569;
+            font-weight: 600;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 1rem;
+        }
+
+        /* Achievements & Certs Grid */
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .stat-card h4 {
+            color: #166534;
+            font-size: 1.1rem;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: #f8fafc;
+            border-left: 4px solid #0284c7;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .testimonial-card .author {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: bold;
+            color: #0f172a;
+        }
+
+        /* Contact & Form */
+        .contact-info {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: #0284c7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            max-width: 600px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #38bdf8;
+        }
+
+        button[type="submit"] {
+            background-color: #0284c7;
+            color: #fff;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0369a1;
+        }
+
+        #form-status {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 6px;
+            display: none;
+            font-weight: 600;
+        }
+
+        .status-success {
+            background-color: #dcfce7;
+            color: #15803d;
+            border: 1px solid #86efac;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #0f172a;
+            color: #94a3b8;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Rachael Kemboi</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#activations">Activations</a></li>
+                <li><a href="#campaigns">Campaigns</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Hi, I'm Rachael Kemboi</h1>
+            <p>Brand Ambassador | Experiential Marketing Specialist | Promotional Activation Representative</p>
+            <a href="#contact" class="cta-btn">Work With Me</a>
+        </section>
+
+        <!-- Personal Profile & CV Summary -->
+        <section id="about">
+            <h2>Personal Profile & Overview</h2>
+            <div class="profile-card">
+                <p>Energetic, results-driven Brand Ambassador and Marketing Specialist with extensive experience leading high-impact experiential activations, customer engagement, and field promotions. Adept at driving brand awareness, boosting direct sales conversions, and delivering memorable consumer experiences for leading retail and lifestyle brands.</p>
+            </div>
+        </section>
+
+        <!-- Skills & Areas of Expertise -->
+        <section id="skills">
+            <h2>Skills & Expertise</h2>
+            <p style="margin-bottom: 0.5rem; color: #64748b;">Click on a skill to highlight it:</p>
+            <div class="skills-container">
+                <span class="skill-badge" onclick="toggleSkill(this)">Brand Activation</span>
+                <span class="skill-badge" onclick="toggleSkill(this)">Direct Customer Engagement</span>
+                <span class="skill-badge" onclick="toggleSkill(this)">Product Demonstrations</span>
+                <span class="skill-badge" onclick="toggleSkill(this)">Field Sales & Conversion</span>
+                <span class="skill-badge" onclick="toggleSkill(this)">Event Logistics</span>
+                <span class="skill-badge" onclick="toggleSkill(this)">Public Speaking & Presentation</span>
+                <span class="skill-badge" onclick="toggleSkill(this)">Lead Generation</span>
+            </div>
+        </section>
+
+        <!-- Previous Brand Promotion/Activation Experience -->
+        <section id="activations">
+            <h2>Brand Activation Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Senior Brand Ambassador</h3>
+                <div class="role">Experiential Marketing Agency | 2024 - Present</div>
+                <p>Lead on-ground teams during pop-up brand activations, oversee sampling distributions, and engage directly with target audiences to build brand loyalty and increase product trial rates.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3>Promotional Sales Representative</h3>
+                <div class="role">Retail & FMCG Campaigns | 2022 - 2024</div>
+                <p>Executed in-store product demonstrations, communicated core product benefits to shoppers, and consistently exceeded daily direct sales targets across major retail locations.</p>
+            </div>
+        </section>
+
+        <!-- Photos / Examples of Activations -->
+        <section id="gallery">
+            <h2>Activation Showcase</h2>
+            <p style="margin-bottom: 1rem; color: #64748b;">Visual examples of past promotional events and field campaigns:</p>
+            
+            <div class="gallery-grid">
+                <!-- Example Card 1 -->
+                <div class="gallery-card">
+                    <!-- Replace image src with your actual image file or link -->
+                    <div class="gallery-img-placeholder">[ Photo: Mall Product Sampling ]</div>
+                    <div class="gallery-info">
+                        <strong>Retail Product Sampling</strong>
+                        <p style="font-size: 0.9rem; color: #64748b;">Interactive product launch booth at a high-traffic shopping mall.</p>
+                    </div>
+                </div>
+
+                <!-- Example Card 2 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-placeholder">[ Photo: Event Booth Activation ]</div>
+                    <div class="gallery-info">
+                        <strong>Festival Experiential Booth</strong>
+                        <p style="font-size: 0.9rem; color: #64748b;">Engaging festival attendees through interactive games and live giveaways.</p>
+                    </div>
+                </div>
+
+                <!-- Example Card 3 -->
+                <div class="gallery-card">
+                    <div class="gallery-img-placeholder">[ Photo: In-Store Promotion ]</div>
+                    <div class="gallery-info">
+                        <strong>In-Store Demo Drive</strong>
+                        <p style="font-size: 0.9rem; color: #64748b;">Supermarket live demonstration drive driving immediate point-of-sale purchase.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marketing Campaigns Participated In -->
+        <section id="campaigns">
+            <h2>Key Marketing Campaigns</h2>
+            
+            <div class="campaign-card">
+                <h3>National Beverage Summer Launch</h3>
+                <p>Participated as a key promotional team member across a 4-week multi-city sampling campaign, distributing over 10,000+ samples and collecting consumer feedback data.</p>
+            </div>
+
+            <div class="campaign-card">
+                <h3>Tech Appliance Retail Roadshow</h3>
+                <p>Delivered live interactive demonstrations of smart home appliances in major retail outlets, driving customer trial and boosting weekly store inventory turnover.</p>
+            </div>
+        </section>
+
+        <!-- Sales Achievements & Certificates -->
+        <section id="achievements">
+            <h2>Achievements & Credentials</h2>
+            
+            <div class="grid-two-col">
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: #0f172a;">Sales & Promotional Achievements</h3>
+                    
+                    <div class="stat-card">
+                        <h4>+135% Sales Target Achieved</h4>
+                        <p style="font-size: 0.9rem; color: #374151;">Ranked #1 promotional representative during a 2-week retail sales push.</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h4>5,000+ Direct Engagements</h4>
+                        <p style="font-size: 0.9rem; color: #374151;">Generated high-quality customer interactions and sign-ups across a single weekend campaign.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 1rem; color: #0f172a;">Certificates & Training</h3>
+                    <ul style="list-style-position: inside; color: #334155; line-height: 2;">
+                        <li>Professional Brand Ambassadorship Certification</li>
+                        <li>Advanced Customer Service & Pitch Excellence</li>
+                        <li>Field Event Safety & Hygiene Compliance</li>
+                        <li>Digital Lead Capture & CRM Basics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials">
+            <h2>Testimonials & Recommendations</h2>
+            
+            <div class="testimonial-card">
+                "Rachael brings unmatched energy and professionalism to every activation. She consistently converted curious onlookers into paying customers during our product launch."
+                <span class="author">— Campaign Manager, Experiential Marketing Agency</span>
+            </div>
+
+            <div class="testimonial-card">
+                "Punctual, articulate, and exceptionally reliable. Rachael was one of our top-performing brand ambassadors during our nationwide roadshow."
+                <span class="author">— Regional Field Marketing Lead</span>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <p><strong>Name:</strong> Rachael Kemboi</p>
+                <p><strong>Email:</strong> <a href="mailto:kemboirachael02@gmail.com">kemboirachael02@gmail.com</a></p>
+            </div>
+
+            <form id="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="Your Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" required placeholder="Your Email">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Project / Activation Inquiry</label>
+                    <textarea id="message" rows="5" required placeholder="Details about your brand, event date, or activation project..."></textarea>
+                </div>
+
+                <button type="submit">Send Inquiry</button>
+            </form>
+            <div id="form-status"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Rachael Kemboi. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleSkill(element) {
+            if (element.style.backgroundColor === 'rgb(56, 189, 248)') {
+                element.style.backgroundColor = '#e0f2fe';
+                element.style.color = '#0369a1';
+            } else {
+                element.style.backgroundColor = '#38bdf8';
+                element.style.color = '#ffffff';
+            }
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const statusDiv = document.getElementById('form-status');
+            
+            statusDiv.className = 'status-success';
+            statusDiv.style.display = 'block';
+            statusDiv.textContent = `Thank you, ${name}! Your inquiry has been sent to Rachael successfully.`;
+
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+
+</body>
+    </html>
 
 <table border="1" cellpadding="10" cellspacing="0">
   <thead>
