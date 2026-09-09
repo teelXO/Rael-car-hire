@@ -117,44 +117,51 @@
     <a href="#">NAVY <span>CAR HIRE</span></a>
   </div>
 
+document.addEventListener("DOMContentLoaded", function () {
+  // 1. Define car prices per day
+  const carPrices = {
+    "Mazda CX-5": 65,
+    "Toyota RAV4": 70,
+    "Honda CR-V": 65,
+    "Nissan X-Trail": 60
+  };
 
-
-    <!-- JAVASCRIPT -->
-    <script>
-        function calculateTotal() {
-            const carModel<header>
-  <div class="logo">
-    <a href="#">Navy <span>Car Hire</span></a>
-  </div>
+  // 2. Target the form elements
+  const carSelect = document.querySelector("select");
+  const daysInput = document.querySelector("input[type='number']");
+  const calculateBtn = document.querySelector(".Calculate-btn") || document.querySelector("button");
   
-  <nav>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#fleet">Our Mazda Fleet</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#contact">Contact Us</a></li>
-    </ul>
-  </nav>
+  // 3. Create or select a element to display the result
+  let resultDisplay = document.getElementById("total-result");
+  if (!resultDisplay) {
+    resultDisplay = document.createElement("p");
+    resultDisplay.id = "total-result";
+    resultDisplay.style.fontWeight = "bold";
+    resultDisplay.style.marginTop = "15px";
+    resultDisplay.style.color = "#d81b60";
+    calculateBtn.parentNode.appendChild(resultDisplay);
+  }
 
-  <div class="nav-contact">
-    <a href="tel:0759343367" class="btn-call">Call: 0759343367</a>
-    <a href="mailto:kemboirachael02@gmail.com" class="btn-email">Email Us</a>
-  </div>
-</header> = document.getElementById("carModel").value;
-            const days = parseInt(document.getElementById("days").value);
-            const resultElement = document.getElementById("bookingResult");
+  // 4. Add click event listener to the button
+  calculateBtn.addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent form reload if inside a <form>
 
-            if (!carModel || isNaN(days) || days <= 0) {
-                resultElement.innerText = "Please select a car and enter a valid number of days.";
-                return;
-            }
+    const selectedCar = carSelect.value;
+    const days = parseInt(daysInput.value, 10);
 
-            const dailyRate = 65;
-            const total = days * dailyRate;
+    if (!days || days < 1) {
+      resultDisplay.textContent = "Please enter a valid number of days.";
+      return;
+    }
 
-            resultElement.innerText = `Booking Summary: ${carModel} for ${days} day(s). Total: $${total}`;
-        }
-    </script>
+    const pricePerDay = carPrices[selectedCar] || 65; // Default rate if not listed
+    const totalCost = pricePerDay * days;
+
+    resultDisplay.textContent = `Total for ${days} day(s) (${selectedCar}): $${totalCost}`;
+  });
+});
+
+   
 </body>
 </html>
 <img src="IMG_20260812_115722.jpg" alt="Car Hire Image" width="500" height="250">
