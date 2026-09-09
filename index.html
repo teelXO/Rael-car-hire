@@ -117,7 +117,34 @@
     <a href="#">NAVY <span>CAR HIRE</span></a>
   </div>
 
+  <!-- INTERNAL JAVASCRIPT -->
+    <script>
+        function calculateTotal() {
+            const carModel = document.getElementById("carModel").value;
+            const days = parseInt(document.getElementById("days").value);
+            const resultElement = document.getElementById("bookingResult");
 
+            if (!carModel || isNaN(days) || days <= 0) {
+                resultElement.style.color = "#c53030";
+                resultElement.innerText = "Please select a car model and enter a valid number of days.";
+                return;
+            }
+
+            let ratePerDay = 65;
+            if (carModel === "Mazda CX-60") {
+                ratePerDay = 85;
+            } else if (carModel === "Executive Sedan") {
+                ratePerDay = 75;
+            }
+
+            const total = days * ratePerDay;
+            resultElement.style.color = "#ffff00";
+            resultElement.innerText = `Booking Summary: ${carModel} for ${days} day(s). Total Estimated Cost: $${total}`;
+        }
+    </script>
+
+</body>
+ </html>
    
 </body>
 </html>
