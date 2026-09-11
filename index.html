@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Navy Car Hire offers reliable, comfortable vehicles for every journey.">
+    <title>Navy Car Hire | Reliable journeys, simply booked</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Main navigation">
+            <a class="logo" href="#home" aria-label="Navy Car Hire home">NAVY <span>CAR HIRE</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">Menu</button>
+            <div class="nav-links" id="main-menu">
+                <a href="#home">Home</a>
+                <a href="#fleet">Our fleet</a>
+                <a href="#booking">Book a car</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy">
+                <p class="eyebrow">Drive further. Arrive happier.</p>
+                <h1>Reliable cars for the road ahead.</h1>
+                <p class="hero-text">Comfortable, well-maintained vehicles and clear daily rates, ready when your plans are.</p>
+                <a class="button button-primary" href="#booking">Reserve your car</a>
+            </div>
+            <div class="hero-stats" aria-label="Service highlights">
+                <div><strong>15%</strong><span>off long-distance rentals</span></div>
+                <div><strong>24/7</strong><span>support on every trip</span></div>
+                <div><strong>$65</strong><span>starting daily rate</span></div>
+            </div>
+        </section>
+
+        <section class="section" id="fleet">
+            <div class="section-heading">
+                <p class="eyebrow">Pick your pace</p>
+                <h2>Our most requested rides</h2>
+                <p>From everyday exploring to executive travel, choose a vehicle that fits the journey.</p>
+            </div>
+            <div class="fleet-grid">
+                <article class="fleet-card">
+                    <div class="fleet-image"><img src="IMG_20260812_115722.jpg" alt="Mazda CX-5 available for hire" loading="lazy"></div>
+                    <div class="fleet-content"><p class="card-kicker">From $65 / day</p><h3>Mazda CX-5</h3><p>Confident handling and room for the whole crew.</p><a href="#booking">Choose CX-5 <span aria-hidden="true">&#8594;</span></a></div>
+                </article>
+                <article class="fleet-card featured-card">
+                    <div class="fleet-image"><img src="IMG_20260812_115736.jpg" alt="Mazda CX-60 available for hire" loading="lazy"></div>
+                    <div class="fleet-content"><p class="card-kicker">From $85 / day</p><h3>Mazda CX-60</h3><p>Premium comfort for longer, more memorable drives.</p><a href="#booking">Choose CX-60 <span aria-hidden="true">&#8594;</span></a></div>
+                </article>
+                <article class="fleet-card">
+                    <div class="fleet-image"><img src="IMG_20260812_115757.jpg" alt="Executive sedan available for hire" loading="lazy"></div>
+                    <div class="fleet-content"><p class="card-kicker">From $75 / day</p><h3>Executive Sedan</h3><p>A polished arrival for business and special occasions.</p><a href="#booking">Choose sedan <span aria-hidden="true">&#8594;</span></a></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="booking-section" id="booking">
+            <div class="booking-copy"><p class="eyebrow">Your trip, your terms</p><h2>Get an instant estimate.</h2><p>Select a vehicle and the number of days. There are no hidden fees in the estimate.</p><p class="offer-note">Book today and save 15% on long-distance rentals.</p></div>
+            <form class="booking-form" id="bookingForm">
+                <label for="carModel">Vehicle</label>
+                <select id="carModel" name="carModel" required>
+                    <option value="">Choose a car</option>
+                    <option value="Mazda CX-5" data-rate="65">Mazda CX-5 - $65/day</option>
+                    <option value="Mazda CX-60" data-rate="85">Mazda CX-60 - $85/day</option>
+                    <option value="Executive Sedan" data-rate="75">Executive Sedan - $75/day</option>
+                </select>
+                <label for="days">Rental days</label>
+                <input type="number" id="days" name="days" min="1" max="60" placeholder="e.g. 3" required>
+                <button class="button button-dark" type="submit">Calculate estimate</button>
+                <p id="bookingResult" class="booking-result" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="section gallery-section" id="gallery">
+            <div class="section-heading"><p class="eyebrow">A closer look</p><h2>Made for real journeys</h2></div>
+            <div class="gallery-grid">
+                <img src="IMG_20260812_115814.jpg" alt="Navy Car Hire vehicle ready for a journey" loading="lazy">
+                <img src="IMG_20260812_115722.jpg" alt="Car interior detail" loading="lazy">
+                <img src="IMG_20260812_115736.jpg" alt="Car exterior detail" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+        <div><a class="logo" href="#home">NAVY <span>CAR HIRE</span></a><p>Clear rates. Comfortable cars. Better journeys.</p></div>
+        <div class="footer-contact"><p>Questions or special requests?</p><a href="mailto:hello@navycarhire.example">hello@navycarhire.example</a><a href="tel:+254700000000">+254 700 000 000</a></div>
+        <p class="copyright">&copy; 2026 Navy Car Hire</p>
+    </footer>
+
+    <script>
+        const bookingForm = document.getElementById('bookingForm');
+        const resultElement = document.getElementById('bookingResult');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.getElementById('main-menu');
+
+        bookingForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const selectedCar = document.getElementById('carModel').selectedOptions[0];
+            const days = Number(document.getElementById('days').value);
+
+            if (!selectedCar.value || !Number.isInteger(days) || days < 1) {
+                resultElement.className = 'booking-result error';
+                resultElement.textContent = 'Choose a vehicle and enter at least 1 rental day.';
+                return;
+            }
+
+            const total = days * Number(selectedCar.dataset.rate);
+            resultElement.className = 'booking-result success';
+            resultElement.textContent = `${selectedCar.value} for ${days} day${days === 1 ? '' : 's'}: estimated total $${total}.`;
+        });
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    </script>
+</body>
+</html>
